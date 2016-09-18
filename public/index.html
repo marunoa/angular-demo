@@ -34,12 +34,28 @@
     </h2>
   </div>
   <div>
-    <b>Factory: </b>
+    <b>character Version: </b>
     {{characterVersionFactory}}
   </div>
   <b>Books:</b>
+  <div>
+    <div>
+      <label>
+      Author
+        <input type="text" name="author" placeholder="R.L Stein" ng-model="author">
+      </label>
+      <label>
+      Title
+        <input type="text" name="author" placeholder="Goosebumps" ng-model="title">
+      </label>
+    </div>
+  </div>
+  <button ng-click="BookService.addBook({
+    author: author,
+    title: title
+  }); title = ''; author='';">Add Book</button>
   <ul>
-    <li ng-repeat="book in books">
+    <li ng-repeat="book in BookService.books">
       <h4>
         {{book.title}}
       </h4>
