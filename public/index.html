@@ -49,6 +49,13 @@
 
   <b>Books:</b>
   <div>
+    <label>
+      Find Book:
+    <input type="search" name="bookTitle" ng-model="searchBookTitle" placeholder="Sherlock Holmes">
+    {{searchBookTitle}}
+    </label>
+  </div>
+  <div>
     <div>
       <label>
       Author
@@ -64,9 +71,10 @@
   <button ng-click="BookService.addBook({
     author: author,
     title: title
-  }); title = ''; author='';">Add Book</button>
+  }); title = ''; author='';">Add Book
+  </button>
   <ul>
-    <li ng-repeat="book in BookService.books">
+    <li ng-repeat="book in BookService.books | filter: {title: searchBookTitle}">
       <h4>
         {{book.title}}
       </h4>
