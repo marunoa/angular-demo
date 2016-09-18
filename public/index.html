@@ -9,6 +9,7 @@
   <script src="js/values.js" type="text/javascript"></script>
   <script src="js/constants.js" type="text/javascript"></script>
   <script src="js/factories.js" type="text/javascript"></script>
+  <script src="js/services.js" type="text/javascript"></script>
 </head>
 <body ng-app="myApp" ng-controller="myController">
   <h1>
@@ -19,15 +20,27 @@
   </h2>
   <div>
     <h3>
+      <b>myName: </b>
       {{myFirstName}}
     </h3>
     <input type="text" ng-model="myModel">
     <div>
+      <b>myModel: </b>
       {{myModel}}
     </div>
-    <h2>{{mainCharacter}}</h2>
+    <h2>
+      <b>mainCharacter: </b>
+      {{mainCharacter}}
+    </h2>
   </div>
-  <div>{{CharacterVersionFactory}}</div>
+  <div>
+    <b>Factory: </b>
+    {{characterVersionFactory}}
+  </div>
+  <div>
+    <b>Books:</b>
+    {{books}}
+  </div>
   <h4>{{APP_VERSION}}</h4>
 </body>
 </html>
