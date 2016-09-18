@@ -37,10 +37,17 @@
     <b>Factory: </b>
     {{characterVersionFactory}}
   </div>
-  <div>
-    <b>Books:</b>
-    {{books}}
-  </div>
+  <b>Books:</b>
+  <ul>
+    <li ng-repeat="book in books">
+      <h4>
+        {{book.title}}
+      </h4>
+      <p>
+        {{book.author}}
+      </p>
+    </li>
+  </ul>
   <h4>{{APP_VERSION}}</h4>
 </body>
 </html>
