@@ -10,6 +10,7 @@
   <script src="js/constants.js" type="text/javascript"></script>
   <script src="js/factories.js" type="text/javascript"></script>
   <script src="js/services.js" type="text/javascript"></script>
+  <script src="js/providers.js" type="text/javascript"></script>
 </head>
 <body ng-app="myApp" ng-controller="myController">
   <h1>
@@ -61,6 +62,17 @@
       </h4>
       <p>
         {{book.author}}
+      </p>
+    </li>
+  </ul>
+  <b>Movies: </b>
+  <ul>
+    <li ng-repeat="movie in movies | filter: {year: 1971}">
+      <h4>
+        {{movie.title}}
+      </h4>
+      <p>
+        {{movie.year}}
       </p>
     </li>
   </ul>

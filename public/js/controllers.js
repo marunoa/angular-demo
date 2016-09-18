@@ -5,11 +5,13 @@ angular.module("myApp")
         "mainCharacter",
         "CharacterVersionFactory",
         "BookService",
+        "Movies",
         function (
           $scope,
           mainCharacter,
           CharacterVersionFactory,
-          BookService
+          BookService,
+          Movies
         )
         {
           $scope.myFirstName = "Tunui";
@@ -17,4 +19,9 @@ angular.module("myApp")
           $scope.mainCharacter = mainCharacter;
           $scope.characterVersionFactory = CharacterVersionFactory;
           $scope.BookService = BookService;
+          $scope.movies = [];
+          Movies.getMovies()
+            .then(function (response) {
+              $scope.movies = response.data;
+            })
   }])
