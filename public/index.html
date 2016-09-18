@@ -74,7 +74,7 @@
   }); title = ''; author='';">Add Book
   </button>
   <ul>
-    <li ng-repeat="book in BookService.books | filter: {title: searchBookTitle}">
+    <li ng-repeat="book in BookService.books | filter: {title: searchBookTitle} | orderBy: 'title'">
       <h4>
         {{book.title}}
       </h4>
@@ -86,7 +86,7 @@
 
   <b>Movies: </b>
   <ul>
-    <li ng-repeat="movie in movies | beforeYearFilter: 1983">
+    <li ng-repeat="movie in movies | beforeYearFilter: 1983 | orderBy: '-year'">
       <h4>
         {{movie.title}}
       </h4>
