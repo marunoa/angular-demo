@@ -1,0 +1,36 @@
+<b>Books:</b>
+  <div>
+    <label>
+      Find Book:
+    <input type="search" name="bookTitle" ng-model="searchBookTitle" placeholder="Sherlock Holmes">
+    {{searchBookTitle}}
+    </label>
+  </div>
+  <div>
+    <div>
+      <label>
+      Author
+        <input type="text" name="author" placeholder="R.L Stein" ng-model="author">
+      </label>
+      <label>
+      Title
+        <input type="text" name="author" placeholder="Goosebumps" ng-model="title">
+      </label>
+    </div>
+  </div>
+
+  <button ng-click="BookService.addBook({
+    author: author,
+    title: title
+  }); title = ''; author='';">Add Book
+  </button>
+  <ul>
+    <li ng-repeat="book in BookService.books | filter: {title: searchBookTitle} | orderBy: 'title'">
+      <h4>
+        {{book.title}}
+      </h4>
+      <p>
+        {{book.author}}
+      </p>
+    </li>
+  </ul>
